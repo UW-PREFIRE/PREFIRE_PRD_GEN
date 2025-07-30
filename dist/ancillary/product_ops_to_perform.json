@@ -1,0 +1,102 @@
+{
+"_JSON_COMMENTS_": {
+  "purpose": {"list of operations": "to be performed for each product type"},
+
+  "product type key": { "product_moniker": "1B-NLRAD",
+                        "operations": ["create_DAAC_granule_md",
+                                       "create_NASA_EDS_repr_img",
+                                       "create_NASA_Worldview_COG",
+		                       "extract_metrics"] }
+  },
+
+
+"nospecs_TIRS_L0_Data": { "product_moniker": "0-PAYLOAD",
+			  "operations": ["create_DAAC_metadata"] },
+
+"nospecs_TIRS_L0_CrtdData": { "product_moniker": "0-PAYLOAD-TLM",
+                              "operations": ["create_DAAC_metadata"] },
+
+"nospecs_SCbus_L0_CrtdData": { "product_moniker": "0-BUS-TLM",
+                               "operations": ["create_DAAC_metadata"] },
+
+"TIRS_L0_Data": { "product_moniker": "0-PAYLOAD-TLM",
+                  "operations": ["extract_metrics"] },
+
+"SCbus_L0_Data": { "product_moniker": "0-BUS-TLM",
+                   "operations": ["extract_metrics"] },
+
+"Orbit_L0_Data": { "product_moniker": "0-ORB-REC",
+                   "operations": ["extract_metrics"] },
+
+"NonGeoLoc_Radiance, NonGeoLoc_BT, NonGeoLoc_Channel_0, Cal_Artifacts": {
+                                       "product_moniker": "1A-RAD",
+                                       "operations": ["create_DAAC_metadata",
+                                                      "extract_metrics"] },
+
+"Radiance, BT, Channel_0": { "product_moniker": "1B-RAD",
+                  "operations": ["create_DAAC_metadata",
+                                 "create_NASA_EDS_repr_img",
+                                 "extract_metrics"] },
+
+"Aux-Met": { "product_moniker": "AUX-MET",
+             "operations": ["create_DAAC_metadata",
+                            "create_NASA_EDS_repr_img",
+                            "extract_metrics"] },
+
+"Aux-Sat": { "product_moniker": "AUX-SAT",
+             "operations": ["create_DAAC_metadata",
+                            "create_NASA_EDS_repr_img",
+                            "extract_metrics"] },
+
+"Atm": { "product_moniker": "2B-ATM",
+         "operations": ["create_DAAC_metadata",
+                        "create_NASA_EDS_repr_img",
+                        "extract_metrics",
+		        "create_NASA_Worldview_COG"] },
+
+"Sfc": { "product_moniker": "2B-SFC",
+         "operations": ["create_DAAC_metadata",
+                        "create_NASA_EDS_repr_img",
+                        "extract_metrics",
+		        "create_NASA_Worldview_COG"] },
+
+"Flx": { "product_moniker": "2B-FLX",
+         "operations": ["create_DAAC_metadata",
+                        "create_NASA_EDS_repr_img",
+                        "extract_metrics",
+		        "create_NASA_Worldview_COG"] },
+
+"Cld": { "product_moniker": "2B-CLD",
+         "operations": ["create_DAAC_metadata",
+                        "create_NASA_EDS_repr_img",
+                        "extract_metrics"] },
+
+"Msk": { "product_moniker": "2B-MSK",
+         "operations": ["create_DAAC_metadata",
+                        "create_NASA_EDS_repr_img",
+                        "extract_metrics"] },
+
+"Sfc-Sorted" : { "product_moniker": "3-SFC-SORTED-ALLSKY",
+                 "operations": ["create_DAAC_metadata",
+                                "create_NASA_EDS_repr_img",
+                                "extract_metrics"] },
+
+"NonGeoLoc_FauxRad": { "product_moniker": "1A-GEOM",
+                       "operations": [] },
+
+"FauxRad": { "product_moniker": "1B-GEOM",
+             "operations": [] },
+
+"Aux-Met, SimTruth": { "product_moniker": "ANC-SimTruth",
+                       "operations": [] },
+
+"SimRad-FullRes": { "product_moniker": "ANC-SimRad-FullRes",
+                    "operations": [] },
+
+"SimRad-TIRSRes": { "product_moniker": "ANC-SimRad-TIRSRes",
+                    "operations": [] },
+
+"SimTruth-SfcEmis": { "product_moniker": "ANC-SimTruth-SfcEmis",
+                      "operations": [] }
+    
+}

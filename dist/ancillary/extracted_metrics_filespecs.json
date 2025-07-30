@@ -1,0 +1,254 @@
+{
+"_JSON_COMMENTS_": {
+  "purpose": {"to_describe": "the metadata and form of a NetCDF-format file"},
+
+  "abbrev_widget_len": {
+       "units": "cubits",
+       "long_name": "abbreviated widget length",
+       "description": "an arbitrary example of a data variable",
+       "C_dimensions": ["atrack", "xtrack"],
+       "F_dimensions": ["xtrack", "atrack"],
+       "np_dtype": "float32", "fill_value": -9.999e3,
+       "compression": [4, true]},
+
+  "C_dimensions_are": { "for": "Python, C, C++, etc." },
+  "F_dimensions_are": { "for": "Fortran, MatLab, IDL, etc." },
+  "can_have_either": { "or_both_types": "of dimension definition" },
+  "for_an_unlimited_dimension": { "add_a_prefix_eg": "!U!time" },
+
+  "Global_Attributes": { "group": "can be empty or omitted" },
+  "xxxxx_Group_Attributes": { "group": "can omit/empty, xxxxx is group name" },
+  "eg_value_known_globalgroup_att": { "value": 3.14159 },
+  "eg_value_pending_globalgroup_att": { "value": "!to_be_set!" } 
+},
+
+
+"Global_Attributes": {
+    "Conventions": {"value": "CF-1.9"},
+    "Format": {"value": "netCDF-4"},
+    "summary": {"value": "!to_be_set!"},
+    "full_versionID": {"value": "!to_be_set!"},
+    "archival_versionID": {"value": "!to_be_set!"},
+    "granule_type": {"value": "!to_be_set!"},
+    "granule_ID": {"value": "!to_be_set!"},
+    "license": {"value": "Freely Distributed"},
+    "provenance": {"value": "!to_be_set!"},
+    "file_name": {"value": "!to_be_set!"},
+    "input_product_files": {"value": "!to_be_set!"},
+    "processing_algorithmID": {"value": "!to_be_set!"},
+    "processing_level": {"value": "!to_be_set!"},
+    "product_documentation_info": {"value": " "},
+    "UTC_of_file_creation": {"value": "!to_be_set!"},
+    "spacecraft_ID": {"value": "!to_be_set!"},
+    "sensor_ID": {"value": "!to_be_set!"},
+    "ctime_coverage_start_s": {"value": "!to_be_set!"},
+    "ctime_coverage_end_s": {"value": "!to_be_set!"},
+    "UTC_coverage_start": {"value": "!to_be_set!"},
+    "UTC_coverage_end": {"value": "!to_be_set!"},
+    "additional_file_description": {"value": "!to_be_set!"},
+    "netCDF_lib_version": {"value": "!to_be_set!"},
+    "orbit_sim_version": {"value": "!to_be_set!"},
+    "SRF_NEdR_version": {"value": "!to_be_set!"},
+    "is_this_a_final_product_file": {"value": "no"}
+},
+
+
+"TIRS_L0_Data": {
+    "encoder_stats": {
+             "long_name": "encoder statistics",
+             "description": "motor encoder statistics",
+             "dim_entry_meaning": "(0)minimum, (1)mean, (2)median, (3)maximum, (4)standard deviation",
+             "C_dimensions": ["stats"],
+             "F_dimensions": ["stats"],
+             "np_dtype": "uint16",
+             "compression": [4, true]}
+},
+
+
+"SCbus_L0_Data": {
+    "granule_edge_ctime": {
+             "units": "seconds since 2000-01-01T00:00:00Z",
+             "long_name": "granule edge continuous_time",
+             "description": "similar to TAI, referenced to the epoch 2000-01-01T00:00:00 UTC, and valid at a granule edge",
+             "C_dimensions": ["gr_edge"],
+             "F_dimensions": ["gr_edge"],
+             "np_dtype": "float64", "fill_value": -9.999e3,
+             "compression": [4, true],
+             "calendar": "standard" }
+},
+
+
+"Orbit_L0_Data": {
+    "granule_edge_ctime": {
+             "units": "seconds since 2000-01-01T00:00:00Z",
+             "long_name": "granule edge continuous_time",
+             "description": "similar to TAI, referenced to the epoch 2000-01-01T00:00:00 UTC, and valid at a granule edge",
+             "C_dimensions": ["gr_edge"],
+             "F_dimensions": ["gr_edge"],
+             "np_dtype": "float64", "fill_value": -9.999e3,
+             "compression": [4, true],
+             "calendar": "standard" }
+},
+
+
+"NonGeoLoc_Radiance": {
+    "n_nonnom_radobsq": {
+             "long_name": "number of non-nominal-quality radiance observations",
+             "description": "number of radiance observations with non-nominal quality as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]}
+},
+
+
+"Radiance": {
+    "n_nonnom_geoloc": {
+             "long_name": "number of non-nominal-quality geolocation calcs",
+             "description": "number of geolocation calculations with non-nominal quality as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Aux-Met": {
+        "n_missing_skin_temp": {
+             "long_name": "number of missing values (field: skin_temp)",
+             "description": "number of missing values (field: skin_temp) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Aux-Sat": {
+    "n_merged_seaice_f_dsrc": {
+             "long_name": "number of merged sea-ice (final) values from each data source",
+             "description": "number of merged sea-ice (final) values from each data source as a function of atrack",
+             "dim_entry_meaning": "(0)None, (1)AMSR, (2)NISE, (3)GEOS-IT",
+             "C_dimensions": ["dsrc_dim1", "atrack"],
+             "F_dimensions": ["atrack", "dsrc_dim1"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]},
+    "n_merged_snow_f_dsrc": {
+             "long_name": "number of merged snow cover (final) values from each data source",
+             "description": "number of merged snow cover (final) values from each data source as a function of atrack",
+             "dim_entry_meaning": "(0)None, (1)NOAA20 VIIRS L3, (2)SNPP VIIRS L3, (3)NISE, (4)GEOS-IT",
+             "C_dimensions": ["dsrc_dim2", "atrack"],
+             "F_dimensions": ["atrack", "dsrc_dim2"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Msk": {
+    "n_missing_cloud_mask": {
+             "long_name": "number of missing values (field: cloud_mask)",
+             "description": "number of missing values (field: cloud_mask) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Sfc": {
+    "n_missing_sfc_sp_emis": {
+             "long_name": "number of missing values (field: sfc_spectral_emis)",
+             "description": "number of missing values (field: sfc_spectral_emis) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]}
+},
+
+
+"Flx": {
+    "n_missing_olr": {
+             "long_name": "number of missing values (field: olr)",
+             "description": "number of missing values (field: olr) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]},
+    "n_missing_spectral_flux": {
+             "long_name": "number of missing values (field: spectral_flux)",
+             "description": "number of missing values (field: spectral_flux) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]}
+},
+
+
+"Atm": {
+    "n_missing_cwv": {
+             "long_name": "number of missing values (field: cwv)",
+             "description": "number of missing values (field: cwv) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]},
+    "n_missing_T_profile": {
+             "long_name": "number of missing values (field: T_profile",
+             "description": "number of missing values (field: T_profile) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]},
+    "n_missing_wv_profile": {
+             "long_name": "number of missing values (field: wv_profile",
+             "description": "number of missing values (field: wv_profile) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]},
+    "n_missing_surface_T": {
+             "long_name": "number of missing values (field: surface_T)",
+             "description": "number of missing values (field: surface_T) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Cld": {
+    "n_missing_cloudtop_p": {
+             "long_name": "number of missing values (field: cloudtop_pressure)",
+             "description": "number of missing values (field: cloudtop_pressure) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]},
+    "n_missing_cloud_tau": {
+             "long_name": "number of missing values (field: cloud_tau",
+             "description": "number of missing values (field: cloud_tau) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]},
+    "n_missing_cloud_d_eff": {
+             "long_name": "number of missing values (field: cloud_d_eff",
+             "description": "number of missing values (field: cloud_d_eff) as a function of atrack",
+             "C_dimensions": ["atrack"],
+             "F_dimensions": ["atrack"],
+             "np_dtype": "int8", "fill_value": -99,
+             "compression": [4, true]}
+},
+
+
+"Sfc-Sorted": {
+    "n_missing_emis_mean": {
+             "long_name": "number of missing values (field: emis_mean)",
+             "description": "number of missing values (field: emis_mean) as a function of latitude",
+             "C_dimensions": ["latitude"],
+             "F_dimensions": ["latitude"],
+             "np_dtype": "int16", "fill_value": -9999,
+             "compression": [4, true]}
+}
+
+}
