@@ -28,7 +28,14 @@ conda activate for_PREFIRE_PRD_GEN;
 conda install -c conda-forge numpy netcdf4 matplotlib cartopy shapely geopandas geocube;
 ```
 
-The location of 'PREFIRE_tools' depends on the value of the user's PYTHONPATH and/or sys.path -- for example, one could simply add each of those git repositories' local root Python source code directory to PYTHONPATH. Operationally, however, this package uses symbolic links to those git repositories' local root Python source code directories (or full copies of the same) in the source/ directory.
+The location of 'PREFIRE_tools' depends on the value of the user's PYTHONPATH and/or sys.path -- for example, one could simply add each of those git repositories' local root Python source code directory to PYTHONPATH.
+
+Operationally, however, this package uses symbolic links to those git repositories' local root Python source code directories (or full copies of the same) in the source/ directory.  To use this symlink method (assuming that all PREFIRE code repositories are in the same parent directory, and that the PYTHONPATH environment variable is unset or empty):
+
+```
+cd source;
+ln -s ../../PREFIRE_tools/source/python/PREFIRE_tools PREFIRE_tools;
+```
 
 ## Environment Variables
 
@@ -56,7 +63,7 @@ OUTPUT_OPTIONS  :  (optional) options that control the output.  The general synt
 
 # Running the test script(s)
 
-## Obtain and unpack any ancillary data and/or test data
+## Obtain and unpack any ancillary data
 
 None (for this version).
 
@@ -88,4 +95,4 @@ Edit `my-run.sh` as needed (e.g., change input file names)
 
 The output file(s) will be in `test/outputs/`
 
-## _The creation of this code was supported by NASA, as part of the PREFIRE (Polar Radiant Energy in the Far-InfraRed Experiment) CubeSat mission._
+### _The creation of this code was supported by NASA, as part of the PREFIRE (Polar Radiant Energy in the Far-InfraRed Experiment) CubeSat mission._
